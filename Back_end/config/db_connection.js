@@ -1,12 +1,18 @@
-const { default: mongoose} = require ('mongoose')
+const mongoose = require('mongoose');
 
 const dbConnect = () => {
-    try {
-        const conn = mongoose.connect(process.env.CONN_STRING);
-        console.log('MongoDB connected');
-    } catch (error) {
-        console.log('Error: ', error.message);
-    }
+  if (!process.env.CONN_STRING) {
+    console.error('Connection string is not defined in environment variables');
+    process.exit(1);
+  }
+
+  mongoose.connect(process.env.CONN_STRING)
+  .then(() => {
+    console.log('Database connected');
+  })
+  .catch((err) => {
+    console.error('Database connection failed:', err);
+  });
 };
 
 module.exports = dbConnect;
