@@ -8,8 +8,8 @@ import { HiInformationCircle } from "react-icons/hi";
 const Contact = () => {
   return (
     <>
-      <Meta title={"Blogs"} />
-      <BreadCrumb title="Blogs" />
+      <Meta title={"contact"} />
+      <BreadCrumb title="Contact" />
       <div className="contact-wrapper py-5 home-wrapper">
         <div className="container-xxl">
           <div className="row">

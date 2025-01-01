@@ -57,9 +57,10 @@ const Footer = () => {
             <div className="col-3 custom-footer-hover">
               <h4 className="text-white mb-4">Information</h4>
               <div className="footer-links d-flex flex-column gap-2">
-                <Link to="/" className="text-white custom-footer-links">Privacy Policy</Link>
-                <Link to="/" className="text-white custom-footer-links">Refund Policy</Link>
-                <Link to="/" className="text-white custom-footer-links">Terms & Conduction</Link>
+                <Link to="/privacy-policy" className="text-white custom-footer-links">Privacy Policy</Link>
+                <Link to="/refund-policy" className="text-white custom-footer-links">Refund Policy</Link>
+                <Link to="/shipping-policy" className="text-white custom-footer-links">Shipping Policy</Link>
+                <Link to="/term-and-conditions" className="text-white custom-footer-links">Terms & Conduction</Link>
                 <Link to="/blogs" className="text-white custom-footer-links">Blogs</Link>
               </div>
             </div>
