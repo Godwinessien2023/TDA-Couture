@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 
+
 const Header = () => {
   return (
     <>
@@ -27,7 +28,7 @@ const Header = () => {
           <div className="row align-item-center">
             <div className="col-2 custom-image">
               <h2>
-                <Link className="text-white custom-hover ">
+                <Link to="/" className="text-white custom-hover ">
                   <img src="./images/tda-couture-logo.png" alt="tda-couture" />
                 </Link>
               </h2>
@@ -49,7 +50,7 @@ const Header = () => {
             <div className="col-5 custom-gen">
               <div className="header-upper-link d-flex align-item-center justify-content-between">
                 <div className="custom-hover">
-                  <Link className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link to="/compare-product" className="d-flex align-item-center gap-10 text-white custom-cart">
                     <img src="./images/compare.svg" alt="compare_svg" />
                     <p mb-0>
                       Compare <br /> Product
@@ -58,7 +59,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <Link className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link to="/wishlist" className="d-flex align-item-center gap-10 text-white custom-cart">
                     <img src="./images/wishlist.svg" alt="wishlist_svg" />
                     <p mb-0>
                       Favorite <br /> wishlist
@@ -67,7 +68,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <Link className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link to="/login" className="d-flex align-item-center gap-10 text-white custom-cart">
                     <img src="./images/user.svg" alt="user_svg" />
                     <p mb-0>
                       Login <br /> My Account
@@ -76,7 +77,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <Link className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link to="/cart" className="d-flex align-item-center gap-10 text-white custom-cart">
                     <img src="./images/cart.svg" alt="cart_svg" />
                     <div className="d-flex flex-column">
                       <span className="badge bg-white text-dark">0</span>

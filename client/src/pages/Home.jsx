@@ -272,12 +272,12 @@ const Home = () => {
             <div className='col-12'>
               <h3 className='section-heading'>Our Popular Products</h3>
             </div>
-           <duv className='row'>
+           <div className='row'>
            <ProductCard />
            <ProductCard />
            <ProductCard />
            <ProductCard />
-           </duv>
+           </div>
           </div>
         </div>
       </section>
