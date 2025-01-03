@@ -919,3 +919,45 @@ address{
 
 /* shipping page ending*/
 /* Home wrapper-2 ending */
+
+
+/*FAQ starts here*/
+
+.faq-page {
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--color-gray-light-2);
+  color: var(--color-bg);
+}
+
+.faq-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question h3 {
+  margin: 0;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: var(--color-gray-dark);
+}
