@@ -25,6 +25,22 @@ const FAQ = () => {
       question: 'Can I cancel or modify my order?',
       answer: 'Orders can be canceled or modified within 24 hours of placing them. Contact customer support for assistance.'
     },
+	{
+		question: 'How do we take measurements?',
+		answer: 'If you are in Lagos, we normally encourage our clients to come into the store so their measurements can be taken ad for fittings to be done. If you are outside Lagos, kindly request for our measurement guide and video or send us your perfect measurement and we will work with it.'
+	},
+	{
+		question: 'Do you accept client materials?',
+		answer: 'We accept client materials, however when you use our materials the price of sewing is reduced.'
+	},
+	{
+		question: 'How do we pick up our items?',
+		answer: 'If you live abroad or outside Lagos, you can either ask your contact to help you pick up or we can inquire on the cost of shipping/transportation to your location and inform you accordingly.'
+	},
+	{
+		question: 'How fast can we get our items?',
+		answer: 'Our order lead time is 7 - 10 days, however since inception we have managed to finish orders within 4 days.'
+	},
   ];
   return (
     <>
