@@ -42,12 +42,18 @@ const FAQ = () => {
 		answer: 'Our order lead time is 7 - 10 days, however since inception we have managed to finish orders within 4 days.'
 	},
 	{
-		question: '',
-		answer: ''
+		question: 'What about express services?',
+		answer: 'If you require express services, we can charge a little extra and make it happen'
 	},
 	{
-		question: '',
-		answer: ''
+		question: 'How do we make payments?',
+		answer: 'You can contact us to confirm or use the account details below:
+
+Account Name: TDA COUTURE
+
+Bank: STANBIC IBTC
+
+Account Number: 0024852947'
 	},
   ];
   return (
