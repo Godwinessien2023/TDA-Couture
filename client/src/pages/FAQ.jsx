@@ -41,6 +41,14 @@ const FAQ = () => {
 		question: 'How fast can we get our items?',
 		answer: 'Our order lead time is 7 - 10 days, however since inception we have managed to finish orders within 4 days.'
 	},
+	{
+		question: '',
+		answer: ''
+	},
+	{
+		question: '',
+		answer: ''
+	},
   ];
   return (
     <>
