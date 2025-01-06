@@ -47,13 +47,7 @@ const FAQ = () => {
 	},
 	{
 		question: 'How do we make payments?',
-		answer: 'You can contact us to confirm or use the account details below:
-
-Account Name: TDA COUTURE
-
-Bank: STANBIC IBTC
-
-Account Number: 0024852947'
+		answer: 'You xan makw payment in our website using Paga, Paystack Checkout, Monify.'
 	},
   ];
   return (
