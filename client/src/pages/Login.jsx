@@ -1,15 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
-import { loginApi } from "../api"; // Import the login function
+import { loginApi } from "../api";
 
 const Login = () => {
-  const [data, setData] = React.useState({});
+  const [email, setEmail] = React.useState({''});
+  const [password, SetPassword] = react.useState({''})
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     loginApi()
       .then((data) => {
         setData(data);
@@ -22,7 +23,7 @@ const Login = () => {
   }, []);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error loading data!</p>;
+  if (error) return <p>Error loading data!</p>;*/
 
   return (
     <>
@@ -34,7 +35,7 @@ const Login = () => {
             <div className="col-12">
               <div className="auth-card">
                 <h3 className="text-center mb-3">Login</h3>
-                <form
+                <form onSubmoit = {handleSubmit}
                   action={"/"}
                   method="POST"
                   className="d-flex flex-column gap-30"
@@ -46,6 +47,7 @@ const Login = () => {
                       className="form-control"
                       placeholder="Email"
                       required
+                      onChange={(event) => setEmail(event.target.value)}
                     />
                   </div>
 
