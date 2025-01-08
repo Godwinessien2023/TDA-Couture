@@ -2,8 +2,28 @@ import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
+import { loginApi } from "../api"; // Import the login function
 
 const Login = () => {
+  const [data, setData] = React.useState({});
+  const [error, setError] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+
+  useEffect(() => {
+    loginApi()
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading data!</p>;
+
   return (
     <>
       <Meta title={"login"} />
@@ -21,10 +41,11 @@ const Login = () => {
                 >
                   <div>
                     <input
-                      type="email"
+                      type="text"
                       name="email"
                       className="form-control"
                       placeholder="Email"
+                      required
                     />
                   </div>
 
@@ -34,6 +55,7 @@ const Login = () => {
                       name="password"
                       className="form-control"
                       placeholder="Password"
+                      required
                     />
                   </div>
 
