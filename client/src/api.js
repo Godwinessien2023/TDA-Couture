@@ -21,7 +21,7 @@ const api = axios.create({
 
 export const loginApi = async (data) => {
   try {
-    const response = await api.post("/auth/login", JSON.stringify(data)); // Ensure JSON.stringify
+    const response = await api.post("/auth/login", JSON.stringify(data)); 
     return response.data;
   } catch (error) {
     console.error("Login API error:", error.response?.data || error.message);
