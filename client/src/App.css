@@ -992,3 +992,21 @@ address {
     max-width: 100%;
   }
 }
+
+.why-join-us{
+  text-align: center;
+  paddding: 50px 40px;
+  background-color: var(--color-gray-light-2);
+}
+.why-join-us h2{
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+}
+.reasons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+/*About section end here*/

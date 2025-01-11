@@ -1,10 +1,10 @@
-import React from "react";
-import BreadCrumb from "../components/BreadCrumb";
+importimportimpport React from"reaimportimportimpporrimportimpoimport React from "react";
+impoimportrt BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 const About = () => {
   return (
     <>
-      <Meta title={"About Us"} />
+      <Meta title="About Us" />
       <BreadCrumb title="About Us" />
       <div className="contact-wrapper py-5 home-wrapper">
         <div className="container-xxl">
@@ -36,6 +36,26 @@ const About = () => {
                           branches across Nigeria and other African countries.
                         </p>
                       </div>
+                    </div>
+                  </div>
+                </section>
+                <section className="why-join-us">
+                  <h2>Why Join Us</h2>
+                  <div className="reasons">
+                    <div className="reason=list">
+                    <span className="material-symbols-outlined">rocket_launch</span>
+                    <h3>Speed</h3>
+                    <p>Join a platform designed to propel your journey and achieve success faster than ever.</p>
+                    </div>
+                    <div className="reason=list">
+                    <span className="material-symbols-outlined">rocket_launch</span>
+                    <h3>Speed</h3>
+                    <p>Join a platform designed to propel your journey and achieve success faster than ever.</p>
+                    </div>
+                    <div className="reason=list">
+                    <span className="material-symbols-outlined">rocket_launch</span>
+                    <h3>Speed</h3>
+                    <p>Join a platform designed to propel your journey and achieve success faster than ever.</p>
                     </div>
                   </div>
                 </section>
