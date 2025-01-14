@@ -21,7 +21,7 @@ const api = axios.create({
 
 export const loginApi = async (data) => {
   try {
-    const response = await api.post("/auth/login", JSON.stringify(data)); 
+    const response = await api.post("/auth/login", JSON.stringify(data));
     return response.data;
   } catch (error) {
     console.error("Login API error:", error.response?.data || error.message);
@@ -32,7 +32,7 @@ export const loginApi = async (data) => {
 // Function to handle signup
 export const signupApi = async (data) => {
   try {
-    const response = await api.post("/auth/signup", JSON.stringify(data));
+    const response = await api.post("/users/add", JSON.stringify(data));
     return response.data;
   } catch (error) {
     console.error("Signup API error:", error.response?.data || error.message);

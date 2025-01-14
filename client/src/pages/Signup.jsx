@@ -1,6 +1,7 @@
 import React from 'react'
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
+import SignupApi from "../api"
 
 const Signup = () => {
   return (
@@ -15,19 +16,23 @@ const Signup = () => {
                         <h3 className='text-center mb-3'>Sign Up/Create Account</h3>
                         <form action={"/"} method='POST' className='d-flex flex-column gap-30'>
                             <div>
-                                <input type='text' name='name' className='form-control' placeholder='Name' />
+                                <input type='text' name='fname' className='form-control' placeholder='Firstname' required='true' />
                             </div>
                             
                             <div>
-                                <input type='tel' name='mobile' className='form-control' placeholder='Mobile Number' />
+                                <input type='text' name='lname' className='form-control' placeholder='Lastname' required='true'/>
                             </div>
 
                             <div>
-                                <input type='email' name='email' className='form-control' placeholder='Email' />
+                                <input type='email' name='email' className='form-control' placeholder='Email' required='true'/>
                             </div>
 
                             <div>
-                                <input type='password' name='password' className='form-control' placeholder='Password' />
+                                <input type='tel' name='mobile' className='form-control' placeholder='Mobile Number' required='true'/>
+                            </div>
+
+                            <div>
+                                <input type='password' name='password' className='form-control' placeholder='Password' required='true'/>
                             </div>
 
                             <div>
