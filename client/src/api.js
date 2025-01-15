@@ -3,7 +3,7 @@ import axios from "axios";
 const API_BASE_URL = "https://dummyjson.com";
 /**
  * Axios instance configured with base URL and default headers.
- * 
+ *
  * @constant {AxiosInstance} api - The Axios instance for making HTTP requests.
  * @property {string} baseURL - The base URL for the API.
  * @property {number} timeout - The request timeout in milliseconds.
@@ -17,7 +17,6 @@ const api = axios.create({
     "Content-Type": "application/json",
   },
 });
-
 
 export const loginApi = async (data) => {
   try {
@@ -35,7 +34,11 @@ export const signupApi = async (data) => {
     const response = await api.post("/users/add", JSON.stringify(data));
     return response.data;
   } catch (error) {
-    console.error("Signup API error:", error.response?.data || error.message);
-    throw error.response?.data || error.message;
+    const errorMessage =
+      error.response?.data ||
+      error.message ||
+      "An error occurred during signup.";
+    console.error("Signup API error:", errorMessage);
+    throw new errorMessage();
   }
 };
