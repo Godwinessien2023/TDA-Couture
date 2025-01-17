@@ -49,6 +49,7 @@ const Login = () => {
                 <div className='auth-card'>
                   <h3 className='text-center mb-3'>Login</h3>
                   <form onSubmit={handleSubmit} className='d-flex flex-column gap-30'>
+                    {error && <p style={{ color: "#ff3838" }}>{error}</p>}
                     <div>
                       <label>Email:</label>
                       <input
@@ -72,14 +73,13 @@ const Login = () => {
                       />
                     </div>
                     <div>
-                      <Link to='/forgot-password'>Forgot Password?</Link>
+                      <Link to='/forgot-password' className="mb-3">Forgot Password?</Link>
                       <div className=' mb-3 d-flex justify-content-center gap-15 align-items-center'>
                         <button type='submit' className='button border-0' disabled={loading}>
                           {loading ? "Logging in..." : "Login"}
                         </button>
                         <Link to='/signup' className='button signup'>Signup</Link>
                       </div>
-                      {error && <p style={{ color: "#ff3838" }}>{error}</p>}
                     </div>
                   </form>
                 </div>

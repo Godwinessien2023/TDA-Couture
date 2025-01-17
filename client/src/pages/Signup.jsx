@@ -15,7 +15,11 @@ const Signup = () => {
                         <h3 className='text-center mb-3'>Sign Up/Create Account</h3>
                         <form action={"/"} method='POST' className='d-flex flex-column gap-30'>
                             <div>
-                                <input type='text' name='name' className='form-control' placeholder='Name' />
+                                <input type='text' name='fristname' className='form-control' placeholder='FirstName' />
+                            </div>
+
+                            <div>
+                                <input type='text' name='lastname' className='form-control' placeholder='LastName' />
                             </div>
                             
                             <div>
