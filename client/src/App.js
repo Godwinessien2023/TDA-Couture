@@ -22,6 +22,9 @@ import SingleProduct from './pages/SingleProduct';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import FAQ from './pages/FAQ';
+import Addblog from './Admin/Addblog';
+import Addcat from './Admin/Addcat';
+import Addproduct from './Admin/Addproduct';
 
 function App() {
   return (
@@ -48,7 +51,10 @@ function App() {
             <Route path='product/id' element={<SingleProduct />} />
             <Route path='cart' element={<Cart />} />
             <Route path='checkout' element={<Checkout />} />
-	    <Route path='faq' element={<FAQ />} />
+	          <Route path='faq' element={<FAQ />} />
+	          <Route path='addblog' element={<Addblog />} />
+	          <Route path='addcat' element={<Addcat />} />
+	          <Route path='addproduct' element={<Addproduct />} />
           </Route>
         </Routes>
       </BrowserRouter>
