@@ -17,7 +17,6 @@ var productSchema = new mongoose.Schema({
     quantity:{ type:Number,}, 
     category:{
         type:String,
-        required:true,
     },
     image:{
         type:String,

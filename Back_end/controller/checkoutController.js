@@ -24,14 +24,14 @@ const checkoutOrder = asyncHandler(async (req, res) => {
 
     const createdOrder = await order.save();
 
-    // Update product quantities
-    for (const item of orderItems) {
-        const product = await Product.findById(item.product);
-        if (product) {
-            product.quantity -= item.qty;
-            await product.save();
-        }
-    }
+    // // Update product quantities
+    // for (const item of orderItems) {
+    //     const product = await Product.findById(item.product);
+    //     if (product) {
+    //         product.quantity -= item.qty;
+    //         await product.save();
+    //     }
+    // }
 
     res.status(201).json(createdOrder);
 });
