@@ -52,7 +52,7 @@ const Login = () => {
                     <div>
                       <label>Email:</label>
                       <input
-                        type="text"
+                        type="email"
                         value={email}
                         placeholder="Email"
                         className="form-control"

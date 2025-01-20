@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://dummyjson.com";
+const API_BASE_URL = "https://legendary-space-halibut-r4g4gv94qgxvc5xg7-5000.app.github.dev/api/v1";
 /**
  * Axios instance configured with base URL and default headers.
  *
@@ -20,7 +20,7 @@ const api = axios.create({
 
 export const loginApi = async (data) => {
   try {
-    const response = await api.post("/auth/login", JSON.stringify(data));
+    const response = await api.post("/user/login", JSON.stringify(data));
     return response.data;
   } catch (error) {
     console.error("Login API error:", error.response?.data || error.message);
