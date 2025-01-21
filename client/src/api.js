@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://dummyjson.com";
+const API_BASE_URL = "https://8kywcs-5000.csb.app/api/v1";
 /**
  * Axios instance configured with base URL and default headers.
- * 
+ *
  * @constant {AxiosInstance} api - The Axios instance for making HTTP requests.
  * @property {string} baseURL - The base URL for the API.
  * @property {number} timeout - The request timeout in milliseconds.
@@ -18,10 +18,9 @@ const api = axios.create({
   },
 });
 
-
 export const loginApi = async (data) => {
   try {
-    const response = await api.post("/auth/login", JSON.stringify(data)); 
+    const response = await api.post("/user/login", JSON.stringify(data));
     return response.data;
   } catch (error) {
     console.error("Login API error:", error.response?.data || error.message);
@@ -32,7 +31,7 @@ export const loginApi = async (data) => {
 // Function to handle signup
 export const signupApi = async (data) => {
   try {
-    const response = await api.post("/auth/signup", JSON.stringify(data));
+    const response = await api.post("/user/register", JSON.stringify(data));
     return response.data;
   } catch (error) {
     console.error("Signup API error:", error.response?.data || error.message);
