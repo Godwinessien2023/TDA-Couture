@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { signupApi } from "../api";
-import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
@@ -11,14 +12,12 @@ const Signup = () => {
   const [Email, setEmail] = useState("");
   const [Mobile, setMobile] = useState("");
   const [Password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    setError("");
 
     try {
       const requestData = {
@@ -30,16 +29,13 @@ const Signup = () => {
       };
       const data = await signupApi(requestData);
 
-      Swal.fire({
-        icon: "success",
-        title: "Signup Successful!",
-        text: `Welcome, ${data.firstname} ${data.lastname}`,
-      });
+      toast.success(`Welcome, ${data.firstname} ${data.lastname}`);
+
+      navigate("/");
     } catch (err) {
-      setError(err.message || "An error occurred during signup.");
+      toast.error(err.message || "An error occurred during signup.");
     } finally {
       setLoading(false);
-      navigate("/");
     }
   };
 
@@ -54,7 +50,6 @@ const Signup = () => {
               <div className="auth-card">
                 <h3 className="text-center mb-3">Sign Up/Create Account</h3>
                 {loading && <p>Loading...</p>}
-                {error && <p>{error}</p>}
                 <form
                   onSubmit={handleSubmit}
                   className="d-flex flex-column gap-30"
@@ -131,6 +126,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
