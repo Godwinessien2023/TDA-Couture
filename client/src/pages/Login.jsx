@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { loginApi } from "../api";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -20,19 +20,19 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); 
-    setError(""); 
-    setLoading(true); 
+    event.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
-      const data = { username: email, password };
-      const response = await loginApi(data); 
+      const data = { email: email, password };
+      const response = await loginApi(data);
       console.log("Login successful:", response);
       setLoading(false);
       navigate("/");
     } catch (err) {
       console.error("Login failed:", err);
-      setError("Invalid credentials. Please try again.");
+      setError("Invalid email or password");
       setLoading(false);
     }
   };
@@ -41,14 +41,17 @@ const Login = () => {
     <>
       <Meta title={"login"} />
       <BreadCrumb title="Login" />
-      <div className='login-wrapper py-5 home-wrapper-2'>
-        <div className='container-xxl'>
+      <div className="login-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
           <div className="login-wrapper">
-            <div className='row'>
-              <div className='col-12'>
-                <div className='auth-card'>
-                  <h3 className='text-center mb-3'>Login</h3>
-                  <form onSubmit={handleSubmit} className='d-flex flex-column gap-30'>
+            <div className="row">
+              <div className="col-12">
+                <div className="auth-card">
+                  <h3 className="text-center mb-3">Login</h3>
+                  <form
+                    onSubmit={handleSubmit}
+                    className="d-flex flex-column gap-30"
+                  >
                     {error && <p style={{ color: "#ff3838" }}>{error}</p>}
                     <div>
                       <label>Email:</label>
@@ -73,12 +76,20 @@ const Login = () => {
                       />
                     </div>
                     <div>
-                      <Link to='/forgot-password' className="mb-3">Forgot Password?</Link>
-                      <div className=' mb-3 d-flex justify-content-center gap-15 align-items-center'>
-                        <button type='submit' className='button border-0' disabled={loading}>
+                      <Link to="/forgot-password" className="mb-3">
+                        Forgot Password?
+                      </Link>
+                      <div className=" mb-3 d-flex justify-content-center gap-15 align-items-center">
+                        <button
+                          type="submit"
+                          className="button border-0"
+                          disabled={loading}
+                        >
                           {loading ? "Logging in..." : "Login"}
                         </button>
-                        <Link to='/signup' className='button signup'>Signup</Link>
+                        <Link to="/signup" className="button signup">
+                          Signup
+                        </Link>
                       </div>
                     </div>
                   </form>
