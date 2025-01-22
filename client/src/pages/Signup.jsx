@@ -12,11 +12,13 @@ const Signup = () => {
   const [Email, setEmail] = useState("");
   const [Mobile, setMobile] = useState("");
   const [Password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setError("");
     setLoading(true);
 
     try {
@@ -30,10 +32,14 @@ const Signup = () => {
       const data = await signupApi(requestData);
 
       toast.success(`Welcome, ${data.firstname} ${data.lastname}`);
+      setTimeout(() => navigate("/"), 3000);
+      console.log("Login Successful!")
 
-      navigate("/");
     } catch (err) {
-      toast.error(err.message || "An error occurred during signup.");
+      console.error("Signuo failed:", err);
+      const errorMessage = err.message || "Signup failed!";
+      setError(errorMessage);
+      toast.error("Signup failed!, An error occurred during signup.");
     } finally {
       setLoading(false);
     }
@@ -50,6 +56,7 @@ const Signup = () => {
               <div className="auth-card">
                 <h3 className="text-center mb-3">Sign Up/Create Account</h3>
                 {loading && <p>Loading...</p>}
+                {error && <p style={{ color: "#ff3838" }}>{error}</p>}
                 <form
                   onSubmit={handleSubmit}
                   className="d-flex flex-column gap-30"
@@ -78,7 +85,7 @@ const Signup = () => {
                   </div>
                   <div>
                     <input
-                      type="text"
+                      type="email"
                       name="email"
                       className="form-control"
                       placeholder="Email"
