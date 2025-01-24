@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 
-
 const Header = () => {
   return (
     <>
@@ -29,7 +28,7 @@ const Header = () => {
             <div className="col-2 custom-image">
               <h2>
                 <Link to="/" className="text-white custom-hover ">
-                  <img src="./images/tda-couture-logo.png" alt="tda-couture" />
+                  <img src="./images/tda-couture-logo.png" alt="TDA-Couture" />
                 </Link>
               </h2>
             </div>
@@ -50,7 +49,10 @@ const Header = () => {
             <div className="col-5 custom-gen">
               <div className="header-upper-link d-flex align-item-center justify-content-between">
                 <div className="custom-hover">
-                  <Link to="/compare-product" className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link
+                    to="/compare-product"
+                    className="d-flex align-item-center gap-10 text-white custom-cart"
+                  >
                     <img src="./images/compare.svg" alt="compare_svg" />
                     <p mb-0>
                       Compare <br /> Product
@@ -59,7 +61,10 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <Link to="/wishlist" className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link
+                    to="/wishlist"
+                    className="d-flex align-item-center gap-10 text-white custom-cart"
+                  >
                     <img src="./images/wishlist.svg" alt="wishlist_svg" />
                     <p mb-0>
                       Favorite <br /> wishlist
@@ -68,7 +73,10 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <Link to="/login" className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link
+                    to="/login"
+                    className="d-flex align-item-center gap-10 text-white custom-cart"
+                  >
                     <img src="./images/user.svg" alt="user_svg" />
                     <p mb-0>
                       Login <br /> My Account
@@ -77,7 +85,10 @@ const Header = () => {
                 </div>
 
                 <div>
-                  <Link to="/cart" className="d-flex align-item-center gap-10 text-white custom-cart">
+                  <Link
+                    to="/cart"
+                    className="d-flex align-item-center gap-10 text-white custom-cart"
+                  >
                     <img src="./images/cart.svg" alt="cart_svg" />
                     <div className="d-flex flex-column">
                       <span className="badge bg-white text-dark">0</span>
@@ -104,15 +115,20 @@ const Header = () => {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <img src="./images/menu.svg" alt="menu_svg"/>
-                      <span className="me-5 d-inline-block">shop Categories</span>
+                      <img src="./images/menu.svg" alt="menu_svg" />
+                      <span className="me-5 d-inline-block">
+                        shop Categories
+                      </span>
                     </button>
                     <ul
                       className="dropdown-menu"
                       aria-labelledby="dropdownMenuButton1"
                     >
                       <li>
-                        <Link className="dropdown-item text-white" to="/addblog">
+                        <Link
+                          className="dropdown-item text-white"
+                          to="/addblog"
+                        >
                           ADDBLOG
                         </Link>
                       </li>
@@ -122,7 +138,10 @@ const Header = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item text-white" to="/addproduct">
+                        <Link
+                          className="dropdown-item text-white"
+                          to="/addproduct"
+                        >
                           ADD PRODUCT
                         </Link>
                       </li>
