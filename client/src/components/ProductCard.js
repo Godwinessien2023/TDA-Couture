@@ -13,12 +13,11 @@ const ProductCard = (props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch products on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const productData = await getProductApi();
-        setProducts(productData); // Assuming productData is an array
+        setProducts(productData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching products:", error);

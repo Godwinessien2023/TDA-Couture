@@ -21,6 +21,16 @@ const api = axios.create({
 export const loginApi = async (data) => {
   try {
     const response = await api.post("/user/login", JSON.stringify(data));
+    const { token } = response.data;
+
+    if (token) {
+      localStorage.setItem("token", token);
+      console.log("Token saved:", token);
+    } else {
+      console.error("No token found in login response");
+      throw new Error("Authentication failed: No token received.");
+    }
+
     return response.data;
   } catch (error) {
     console.error("Login API error:", error.response?.data || error.message);
@@ -41,7 +51,7 @@ export const signupApi = async (data) => {
 
 export const addProductApi = async (data) => {
   try {
-    const response = await api.post("/user/addproduct", JSON.stringify(data));
+    const response = await api.post("/product/", JSON.stringify(data));
     return response.data;
   } catch (error) {
     console.error("Signup API error:", error.response?.data || error.message);
@@ -58,6 +68,23 @@ export const getProductApi = async (data) => {
     return response.data;
   } catch (error) {
     console.log("Failed to get products", error);
+    throw error;
+  }
+};
+
+export const getCategoryApi = async (data) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await api.get("/category/getallcategories", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: data,
+    });
+    console.log(token);
+    return response.data;
+  } catch (error) {
+    console.log("Failed to get all categories");
     throw error;
   }
 };

@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import CustomInput from "../components/CustomInput";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import Dropzone from "react-dropzone";
+import { addProductApi } from "../api";
 
 const Addproduct = () => {
-  const [images, setImages] = useState([]); // Manage uploaded images
   const [formValues, setFormValues] = useState({
-    title: "",
+    name: "",
     description: "",
     price: "",
-    category: "",
     quantity: "",
+    category: "",
+    image: "", // URL for the image
   });
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,51 +27,51 @@ const Addproduct = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formValues.title) newErrors.title = "Title is Required";
-    if (!formValues.description) newErrors.description = "Description is Required";
+    if (!formValues.name) newErrors.name = "Title is Required";
+    if (!formValues.description)
+      newErrors.description = "Description is Required";
     if (!formValues.price) newErrors.price = "Price is Required";
-    if (!formValues.category) newErrors.category = "Category is Required";
     if (!formValues.quantity) newErrors.quantity = "Quantity is Required";
+    if (!formValues.category) newErrors.category = "Category is Required";
+    if (!formValues.image) newErrors.image = "Image URL is Required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleImageUpload = (acceptedFiles) => {
-    const updatedImages = [...images, ...acceptedFiles];
-    setImages(updatedImages);
-  };
-
-  const removeImage = (index) => {
-    const updatedImages = images.filter((_, i) => i !== index);
-    setImages(updatedImages);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (validateForm()) {
-      // Construct the form data for submission
-      const formData = new FormData();
-      formData.append("title", formValues.title);
-      formData.append("description", formValues.description);
-      formData.append("price", formValues.price);
-      formData.append("category", formValues.category);
-      formData.append("quantity", formValues.quantity);
+      const productData = {
+        name: formValues.name,
+        description: formValues.description,
+        price: formValues.price,
+        quantity: formValues.quantity,
+        category: formValues.category,
+        image: formValues.image, // Include the image URL directly
+      };
 
-      // Append images to the form data
-      images.forEach((image, index) => {
-        formData.append(`images[${index}]`, image);
-      });
+      try {
+        // Call the API function
+        const response = await addProductApi(productData);
 
-      console.log("Form submitted with data:", formData);
-      // Reset the form
-      setFormValues({
-        title: "",
-        description: "",
-        price: "",
-        category: "",
-        quantity: "",
-      });
-      setImages([]);
+        // Handle successful API call
+        setSuccessMessage("Product added successfully!");
+        console.log("API Response:", response);
+
+        // Reset the form values
+        setFormValues({
+          name: "",
+          description: "",
+          price: "",
+          quantity: "",
+          category: "",
+          image: "",
+        });
+      } catch (error) {
+        console.error("Error adding product:", error);
+        setErrors({ api: "Failed to add product. Please try again." });
+      }
     }
   };
 
@@ -82,21 +83,32 @@ const Addproduct = () => {
             <div>
               <h3 className="mb-4 title">Add Product</h3>
               <div>
-                <form onSubmit={handleSubmit} className="d-flex gap-3 flex-column">
+                {successMessage && (
+                  <div className="alert alert-success">{successMessage}</div>
+                )}
+                {errors.api && (
+                  <div className="alert alert-danger">{errors.api}</div>
+                )}
+                <form
+                  onSubmit={handleSubmit}
+                  className="d-flex gap-3 flex-column"
+                >
                   <CustomInput
                     type="text"
                     label="Enter Product Title"
-                    name="title"
+                    name="name"
                     onChng={handleInputChange}
-                    val={formValues.title}
+                    val={formValues.name}
                   />
-                  <div className="error">{errors.title}</div>
+                  <div className="error">{errors.name}</div>
 
                   <ReactQuill
                     theme="snow"
                     name="description"
                     value={formValues.description}
-                    onChange={(value) => handleSelectChange(value, "description")}
+                    onChange={(value) =>
+                      handleSelectChange(value, "description")
+                    }
                   />
                   <div className="error">{errors.description}</div>
 
@@ -125,58 +137,24 @@ const Addproduct = () => {
                     type="number"
                     label="Enter Product Quantity"
                     name="quantity"
-                    onChange={handleInputChange}
+                    onChng={handleInputChange}
                     val={formValues.quantity}
                   />
                   <div className="error">{errors.quantity}</div>
 
-                  <div className="dropzone-container bg-white border p-4 text-center mt-3">
-                    <Dropzone onDrop={handleImageUpload}>
-                      {({ getRootProps, getInputProps }) => (
-                        <section className="dropzone-content">
-                          <div
-                            {...getRootProps()}
-                            className="dropzone-box border rounded p-3"
-                            style={{
-                              border: "2px dashed #ccc",
-                              borderRadius: "8px",
-                              cursor: "pointer",
-                            }}
-                          >
-                            <input {...getInputProps()} />
-                            <p className="text-muted">
-                              Drag & drop some files here, or click to select files
-                            </p>
-                            <button type="button" className="btn btn-primary mt-2">
-                              Browse Files
-                            </button>
-                          </div>
-                        </section>
-                      )}
-                    </Dropzone>
-                  </div>
+                  <CustomInput
+                    type="text"
+                    label="Enter Image URL"
+                    name="image"
+                    onChng={handleInputChange}
+                    val={formValues.image}
+                  />
+                  <div className="error">{errors.image}</div>
 
-                  <div className="uploaded-images d-flex flex-wrap mt-3 gap-3">
-                    {images.map((image, index) => (
-                      <div key={index} className="position-relative">
-                        <img
-                          src={URL.createObjectURL(image)}
-                          alt="Uploaded File"
-                          className="img-thumbnail"
-                          width={200}
-                          height={200}
-                        />
-                        <button
-                          type="button"
-                          className="btn-close position-absolute"
-                          style={{ top: "10px", right: "10px" }}
-                          onClick={() => removeImage(index)}
-                        ></button>
-                      </div>
-                    ))}
-                  </div>
-
-                  <button className="btn btn-success border-0 rounded-3 my-5" type="submit">
+                  <button
+                    className="btn btn-success border-0 rounded-3 my-5"
+                    type="submit"
+                  >
                     Add Product
                   </button>
                 </form>
