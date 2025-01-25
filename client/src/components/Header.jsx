@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -31,20 +30,6 @@ const Header = () => {
                   <img src="./images/tda-couture-logo.png" alt="TDA-Couture" />
                 </Link>
               </h2>
-            </div>
-            <div className="col-5">
-              <div className="input-group custom-input-group">
-                <input
-                  type="text"
-                  className="form-control py-0"
-                  placeholder="Search Product Here..."
-                  aria-label="Search Product Here..."
-                  aria-describedby="basic-addon2"
-                />
-                <span className="input-group-text p-2" id="basic-addon2">
-                  <BsSearch className="fs-4" />
-                </span>
-              </div>
             </div>
             <div className="col-5 custom-gen">
               <div className="header-upper-link d-flex align-item-center justify-content-between">

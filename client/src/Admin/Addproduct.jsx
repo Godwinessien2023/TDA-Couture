@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CustomInput from "../components/CustomInput";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { addProductApi } from "../api";
+import { addProductApi, getCategoryApi } from "../api";
 
 const Addproduct = () => {
   const [formValues, setFormValues] = useState({
@@ -13,6 +13,7 @@ const Addproduct = () => {
     category: "",
     image: "", // URL for the image
   });
+  const [categories, setCategories] = useState([]); // Categories state
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -27,7 +28,7 @@ const Addproduct = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formValues.name) newErrors.name = "Title is Required";
+    if (!formValues.name) newErrors.name = "Name is Required";
     if (!formValues.description)
       newErrors.description = "Description is Required";
     if (!formValues.price) newErrors.price = "Price is Required";
@@ -42,9 +43,15 @@ const Addproduct = () => {
     e.preventDefault();
 
     if (validateForm()) {
+      // Strip HTML tags from the description
+      const parser = new DOMParser();
+      const strippedDescription =
+        parser.parseFromString(formValues.description, "text/html").body
+          .textContent || "";
+
       const productData = {
         name: formValues.name,
-        description: formValues.description,
+        description: strippedDescription, // Cleaned description
         price: formValues.price,
         quantity: formValues.quantity,
         category: formValues.category,
@@ -75,6 +82,20 @@ const Addproduct = () => {
     }
   };
 
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await getCategoryApi();
+        setCategories(response); // Update state with fetched categories
+      } catch (error) {
+        console.error("Failed to fetch categories:", error);
+        setErrors({ api: "Failed to fetch categories. Please try again." });
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
     <>
       <div className="addproduct-wrapper py-5 home-wrapper-2">
@@ -95,7 +116,7 @@ const Addproduct = () => {
                 >
                   <CustomInput
                     type="text"
-                    label="Enter Product Title"
+                    label="Enter Product Name"
                     name="name"
                     onChng={handleInputChange}
                     val={formValues.name}
@@ -128,8 +149,11 @@ const Addproduct = () => {
                     className="form-control py-3 mb-3"
                   >
                     <option value="">Select Category</option>
-                    <option value="Category1">Category1</option>
-                    <option value="Category2">Category2</option>
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
                   </select>
                   <div className="error">{errors.category}</div>
 

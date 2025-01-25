@@ -25,6 +25,7 @@ import FAQ from "./pages/FAQ";
 import Addblog from "./Admin/Addblog";
 import Addcat from "./Admin/Addcat";
 import Addproduct from "./Admin/Addproduct";
+import ProductSearch from "./pages/productsearch";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             <Route path="addblog" element={<Addblog />} />
             <Route path="addcat" element={<Addcat />} />
             <Route path="addproduct" element={<Addproduct />} />
+            <Route path="productsearch" element={<ProductSearch />} />
           </Route>
         </Routes>
       </BrowserRouter>
