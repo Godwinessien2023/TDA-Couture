@@ -82,7 +82,7 @@ cd TDA-Couture
 1. Navigate to the frontend directory:
 
    ```bash
-   cd frontend
+   cd client
    ```
 
 2. Install the dependencies:
