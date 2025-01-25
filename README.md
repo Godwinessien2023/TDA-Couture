@@ -55,7 +55,7 @@ cd TDA-Couture
 1. Navigate to the backend directory:
 
    ```bash
-   cd back_end
+   cd Back_end
    ```
 
 2. Install the dependencies:
