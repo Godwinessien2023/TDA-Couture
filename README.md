@@ -5,9 +5,6 @@ This is a professional ecommerce web application built using modern web developm
 # TDA-Couture
 ## Holberton School (ALX) Final Portfolio Project
 
-
-
-
 ---
 
 ## Features
