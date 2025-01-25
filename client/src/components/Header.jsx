@@ -59,6 +59,18 @@ const Header = () => {
 
                 <div>
                   <Link
+                    to="/productsearch"
+                    className="d-flex align-item-center gap-10 text-white custom-cart"
+                  >
+                    <img src="./images/wishlist.svg" alt="wishlist_svg" />
+                    <p mb-0>
+                      Product <br /> search
+                    </p>
+                  </Link>
+                </div>
+
+                <div>
+                  <Link
                     to="/login"
                     className="d-flex align-item-center gap-10 text-white custom-cart"
                   >

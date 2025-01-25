@@ -4,7 +4,6 @@ import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
-import CategoryCard from "../components/category";
 
 const Home = () => {
   return (
@@ -219,7 +218,6 @@ const Home = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <CategoryCard />
               <h3 className="section-heading">Feature Collections</h3>
             </div>
             <ProductCard />
