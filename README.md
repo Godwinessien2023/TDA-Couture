@@ -145,8 +145,14 @@ This project is licensed under the [MIT License](LICENSE).
 
 For inquiries or support, please contact:
 
-- **Name:** Your Name
-- **Email:** [your.email@example.com](mailto\:your.email@example.com)
-- **GitHub:** [Your GitHub Profile](https://github.com/your-username)
+- **Name:** Stella ORIJI
+- **Email:** [stellagiftoriji@gmail.com](mailto\:stellagiftoriji@gmail.com)
+- **GitHub:** https://github.com/StellaGift
+
+- **Name:** Godwin Essien
+- **Email:** [godwinessien2023@gmail.com](mailto\:godwinessien2023@gmail.com)
+- **Github** https://github.com/Godwinessien2023
+
+-
 
 
