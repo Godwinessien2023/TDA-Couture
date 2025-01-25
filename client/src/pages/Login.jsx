@@ -2,15 +2,17 @@
  * Login component renders a login form for user authentication.
  * It includes email and password fields, and handles form submission.
  * On successful login, it navigates to the home page.
- * On failure, it displays an error message.
- *
+ * On failure, it displays an error message using React Toastify.
  */
+
 import React, { useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { loginApi } from "../api";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,21 +27,24 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const data = { email: email, password };
+      const data = { email, password };
       const response = await loginApi(data);
+      toast.success("Login Successful!");
+      setTimeout(() => navigate("/"), 3000);
       console.log("Login successful:", response);
       setLoading(false);
-      navigate("/");
     } catch (err) {
       console.error("Login failed:", err);
-      setError("Invalid email or password");
+      const errorMessage = err.message || "Login failed! Please try again.";
+      setError(errorMessage); // Set error message to display in the UI
+      toast.error("Login failed! Please try again"); // Show error toast
       setLoading(false);
     }
   };
 
   return (
     <>
-      <Meta title={"login"} />
+      <Meta title={"Login"} />
       <BreadCrumb title="Login" />
       <div className="login-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
@@ -52,11 +57,12 @@ const Login = () => {
                     onSubmit={handleSubmit}
                     className="d-flex flex-column gap-30"
                   >
+                    {/* Display error below the title */}
                     {error && <p style={{ color: "#ff3838" }}>{error}</p>}
                     <div>
                       <label>Email:</label>
                       <input
-                        type="text"
+                        type="email"
                         value={email}
                         placeholder="Email"
                         className="form-control"
@@ -79,7 +85,7 @@ const Login = () => {
                       <Link to="/forgot-password" className="mb-3">
                         Forgot Password?
                       </Link>
-                      <div className=" mb-3 d-flex justify-content-center gap-15 align-items-center">
+                      <div className="mb-3 d-flex justify-content-center gap-15 align-items-center">
                         <button
                           type="submit"
                           className="button border-0"
@@ -99,6 +105,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
