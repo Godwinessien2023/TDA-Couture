@@ -46,8 +46,8 @@ Ensure you have the following installed on your machine:
 To clone the application, run the following command:
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/Godwinessien2023/TDA-Couture.git
+cd TDA-Couture
 ```
 
 ### Backend Setup
