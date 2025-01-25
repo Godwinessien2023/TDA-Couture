@@ -88,3 +88,19 @@ export const getCategoryApi = async (data) => {
     throw error;
   }
 };
+
+export const addCategoryApi = async (data) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await api.post("/category/", JSON.stringify(data), {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: data,
+    });
+    return response;
+  } catch (error) {
+    console.log("Failed to add category");
+    throw error;
+  }
+};

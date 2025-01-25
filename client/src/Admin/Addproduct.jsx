@@ -11,7 +11,7 @@ const Addproduct = () => {
     price: "",
     quantity: "",
     category: "",
-    image: "", // URL for the image
+    image: "",
   });
   const [categories, setCategories] = useState([]); // Categories state
   const [errors, setErrors] = useState({});
@@ -43,7 +43,6 @@ const Addproduct = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Strip HTML tags from the description
       const parser = new DOMParser();
       const strippedDescription =
         parser.parseFromString(formValues.description, "text/html").body
@@ -51,22 +50,19 @@ const Addproduct = () => {
 
       const productData = {
         name: formValues.name,
-        description: strippedDescription, // Cleaned description
+        description: strippedDescription,
         price: formValues.price,
         quantity: formValues.quantity,
         category: formValues.category,
-        image: formValues.image, // Include the image URL directly
+        image: formValues.image,
       };
 
       try {
-        // Call the API function
         const response = await addProductApi(productData);
 
-        // Handle successful API call
         setSuccessMessage("Product added successfully!");
         console.log("API Response:", response);
 
-        // Reset the form values
         setFormValues({
           name: "",
           description: "",
