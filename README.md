@@ -153,6 +153,11 @@ For inquiries or support, please contact:
 - **Email:** [godwinessien2023@gmail.com](mailto\:godwinessien2023@gmail.com)
 - **Github** https://github.com/Godwinessien2023
 
--
+- **Name:** Ayooluwa Gideon Oloyede
+- **Email:** [ayooluwaoloyede71@gmail.com](mailto\:ayooluwaoloyede71@gmail.com)
+- **Github:** https://github.com/Gideon-Esq
 
+- **Name:** Chinonso Ogbonnaya
+- **Email:** [ogbonnaya15@gmail.com](mailto\:ogbonnaya15@gmail.com)
+- **Github** https://github.com/Ogbonnaya15
 
