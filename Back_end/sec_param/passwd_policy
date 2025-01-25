@@ -1,0 +1,58 @@
+import re
+
+def is_password_secure(password, inform_requirements=False):
+    """
+    Check if a password meets the security policy requirements.
+
+    Requirements:
+    - Minimum of 8 characters
+    - Must contain both uppercase and lowercase letters
+    - Must contain at least one special character
+    - Must contain at least one numeric digit
+
+    :param password: str, the password to validate
+    :param inform_requirements: bool, if True, returns the requirements if password is not secure
+    :return: bool, True if password is secure, False otherwise. If inform_requirements is True and the password
+             is not secure, returns a tuple (False, str) with the unmet requirements.
+    """
+    requirements = []
+
+    if len(password) < 8:
+        requirements.append("- Minimum of 8 characters")
+
+    if not re.search(r"[A-Z]", password):
+        requirements.append("- At least one uppercase letter")
+
+    if not re.search(r"[a-z]", password):
+        requirements.append("- At least one lowercase letter")
+
+    if not re.search(r"\d", password):
+        requirements.append("- At least one numeric digit")
+
+    if not re.search(r"[@$!%*?&#^~_-]", password):
+        requirements.append("- At least one special character (e.g., @$!%*?&#^~_-) ")
+
+    if requirements:
+        if inform_requirements:
+            return False, "Password requirements:\n" + "\n".join(requirements)
+        return False
+
+    return True
+
+# Example usage
+if __name__ == "__main__":
+    test_passwords = [
+        "Password1!",  # Valid password
+        "password1!",  # Missing uppercase
+        "PASSWORD1!",  # Missing lowercase
+        "Password!",   # Missing number
+        "Password1",   # Missing special character
+        "Pass1!"       # Too short
+    ]
+
+    for pwd in test_passwords:
+        secure, message = is_password_secure(pwd, inform_requirements=True) if not is_password_secure(pwd) else (True, "")
+        print(f"Password: {pwd} | Secure: {secure}")
+        if message:
+            print(message)
+
