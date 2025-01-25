@@ -67,12 +67,7 @@ cd TDA-Couture
 3. Set up environment variables:
 
    - Create a `.env` file in the `backend` directory.
-   - Add the necessary variables (e.g., database URI, API keys, etc.). Example:
-     ```
-     PORT=5000
-     DATABASE_URI=<your_database_uri>
-     JWT_SECRET=<your_jwt_secret>
-     ```
+   - Add the necessary variables (e.g., database URI, API keys, etc.).
 
 4. Start the server:
 
