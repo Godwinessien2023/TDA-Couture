@@ -149,66 +149,54 @@ const Home = () => {
               <div className="categories d-flex align-items-center flex-wrap justify-content-between">
                 <div className="d-flex gap-10 align-items-center">
                   <div>
-                    <h6>Cameras</h6>
-                    <p>10 Items</p>
+                    <h6>Shoe</h6>
+                    <p>Available</p>
                   </div>
-                  <img src="images/camera.jpg" alt="Camera" />
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845029/1691581088062_uo9kgp.jpg"
+                    alt="shoe"
+                    height={110}
+                    width={110}
+                  />
                 </div>
 
                 <div className="d-flex gap-10 align-items-center">
                   <div>
-                    <h6>Smart TV</h6>
-                    <p>10 Items</p>
+                    <h6>Black Cross leather slide</h6>
+                    <p>Available</p>
                   </div>
-                  <img src="images/tv.jpg" alt="Camera" />
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737844959/1691581088308_avjfxb.jpg"
+                    alt="Camera"
+                    height={110}
+                    width={110}
+                  />
                 </div>
 
                 <div className="d-flex gap-10 align-items-center">
                   <div>
-                    <h6>Smart Ear-pics</h6>
-                    <p>10 Items</p>
+                    <h6>Bussiness Bag</h6>
+                    <p>Available</p>
                   </div>
-                  <img src="images/headphone.jpg" alt="Camera" />
+                  <img
+                    src="	https://res.cloudinary.com/duaygvjlr/image/upload/v1737845025/1691581087278_rvjwil.jpg"
+                    alt="Camera"
+                    height={110}
+                    width={110}
+                  />
                 </div>
 
                 <div className="d-flex gap-10 align-items-center">
                   <div>
-                    <h6>Music & Gaming</h6>
-                    <p>10 Items</p>
+                    <h6>Asad Arabian perfume</h6>
+                    <p>Available</p>
                   </div>
-                  <img src="images/homeapp.jpg" alt="Camera" />
-                </div>
-
-                <div className="d-flex gap-10 align-items-center">
-                  <div>
-                    <h6>Cameras</h6>
-                    <p>10 Items</p>
-                  </div>
-                  <img src="images/camera.jpg" alt="Camera" />
-                </div>
-
-                <div className="d-flex gap-10 align-items-center">
-                  <div>
-                    <h6>Smart TV</h6>
-                    <p>10 Items</p>
-                  </div>
-                  <img src="images/tv.jpg" alt="Camera" />
-                </div>
-
-                <div className="d-flex gap-10 align-items-center">
-                  <div>
-                    <h6>Smart Ear-pics</h6>
-                    <p>10 Items</p>
-                  </div>
-                  <img src="images/headphone.jpg" alt="Camera" />
-                </div>
-
-                <div className="d-flex gap-10 align-items-center">
-                  <div>
-                    <h6>Music & Gaming</h6>
-                    <p>10 Items</p>
-                  </div>
-                  <img src="images/homeapp.jpg" alt="Camera" />
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845015/1691581087226_srvt0q.jpg"
+                    alt="Asad Arabian perfume"
+                    height={110}
+                    width={110}
+                  />
                 </div>
               </div>
             </div>
@@ -223,14 +211,11 @@ const Home = () => {
               <h3 className="section-heading">Feature Collections</h3>
             </div>
             <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
           </div>
         </div>
       </section>
 
-      <section className="famous-wrapper-2 py-5 home-wrapper-2">
+      {/**<section className="famous-wrapper-2 py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-3">
@@ -296,7 +281,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+</section>**/}
 
       <section className="special-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
@@ -321,9 +306,6 @@ const Home = () => {
             </div>
             <div className="row">
               <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
             </div>
           </div>
         </div>
@@ -336,28 +318,68 @@ const Home = () => {
               <div className="marque-inner-wrapper card-wrapper">
                 <Marquee className="d-flex">
                   <div className="mx-4 w-25">
-                    <img src="images/brand-01.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845029/1691581088062_uo9kgp.jpg"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-02.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737844959/1691581088308_avjfxb.jpg"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-03.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845025/1691581087278_rvjwil.jpg"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-04.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737844073/1691581088573_da7muh.jpg"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-05.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845015/1691581087226_srvt0q.jpg"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-06.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737843192/71_mh6xaa.png"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-07.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737843192/71_mh6xaa.png"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                   <div className="mx-4 w-25">
-                    <img src="images/brand-08.png" alt="Brand" />
+                    <img
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737843192/71_mh6xaa.png"
+                      alt="Brand"
+                      height={110}
+                      width={110}
+                    />
                   </div>
                 </Marquee>
               </div>
@@ -368,15 +390,7 @@ const Home = () => {
 
       <section className="blog-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
-          <div className="row">
-            <div className="col-12">
-              <h3 className="section-heading">Our Latest Blogs</h3>
-            </div>
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-          </div>
+          <div className="row"></div>
         </div>
       </section>
     </>

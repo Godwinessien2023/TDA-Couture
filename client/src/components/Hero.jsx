@@ -38,8 +38,8 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <button className="hero-btn primary">Explore Collection</button>
-          <button className="hero-btn secondary">Book a Consultation</button>
+          <button className="hero-btn primary">Shop Now</button>
+          <button className="hero-btn secondary">Explore Collection</button>
         </motion.div>
       </div>
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://8kywcs-5000.csb.app/api/v1";
+const API_BASE_URL = "https://hm3363-5000.csb.app/api/v1";
 /**
  * Axios instance configured with base URL and default headers.
  *

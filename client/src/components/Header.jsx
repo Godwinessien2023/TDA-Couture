@@ -33,7 +33,7 @@ const Header = () => {
               </h2>
             </div>
             <div className="col-9 custom-gen">
-              <div className="header-upper-link d-flex align-item-center justify-content-end">
+              <div className="header-upper-link d-flex align-item-center justify-content-end gap-4">
                 <div className="custom-hover">
                   {/**<Link
                     to="/compare-product"
@@ -114,9 +114,7 @@ const Header = () => {
                       aria-expanded="false"
                     >
                       <img src="./images/menu.svg" alt="menu_svg" />
-                      <span className="me-5 d-inline-block">
-                        shop Categories
-                      </span>
+                      <span className="me-5 d-inline-block">Admin Menu</span>
                     </button>
                     <ul
                       className="dropdown-menu"
