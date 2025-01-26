@@ -4,15 +4,17 @@ import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
+import HeroSection from "../components/Hero";
 
 const Home = () => {
   return (
     <>
+      <HeroSection />
       <section className="home-wrapper-1 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
-              <div className="main-banner position-relative">
+              {/*<div className="main-banner position-relative">
                 <img
                   src="./images/main-banner-1.jpg"
                   className="img-fluid rounded-3"
@@ -88,7 +90,7 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+  </div>**/}
             </div>
           </div>
         </div>

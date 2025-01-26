@@ -1,15 +1,16 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import HeroSection from "./Hero";
 
 const Header = () => {
   return (
     <>
-      <header className="header-top-strip py-1">
+      {/**<header className="header-top-strip py-1">
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
               <p mb-0>Free shipping over $100 and free Returns</p>
-            </div>
+  </div>
             <div className="col-6 mb-0">
               <p className="text-end m">
                 Hotline:
@@ -20,7 +21,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header>**/}
       <header className="header-upper py-2 custom-head-down">
         <div className="container-xxl">
           <div className="row align-item-center">
@@ -31,10 +32,10 @@ const Header = () => {
                 </Link>
               </h2>
             </div>
-            <div className="col-5 custom-gen">
-              <div className="header-upper-link d-flex align-item-center justify-content-between">
+            <div className="col-9 custom-gen">
+              <div className="header-upper-link d-flex align-item-center justify-content-end">
                 <div className="custom-hover">
-                  <Link
+                  {/**<Link
                     to="/compare-product"
                     className="d-flex align-item-center gap-10 text-white custom-cart"
                   >
@@ -54,7 +55,7 @@ const Header = () => {
                     <p mb-0>
                       Favorite <br /> wishlist
                     </p>
-                  </Link>
+                  </Link>**/}
                 </div>
 
                 <div>
@@ -62,7 +63,7 @@ const Header = () => {
                     to="/productsearch"
                     className="d-flex align-item-center gap-10 text-white custom-cart"
                   >
-                    <img src="./images/wishlist.svg" alt="wishlist_svg" />
+                    <span class="material-symbols-outlined">search</span>
                     <p mb-0>
                       Product <br /> search
                     </p>
@@ -74,7 +75,7 @@ const Header = () => {
                     to="/login"
                     className="d-flex align-item-center gap-10 text-white custom-cart"
                   >
-                    <img src="./images/user.svg" alt="user_svg" />
+                    <span class="material-symbols-outlined">login</span>
                     <p mb-0>
                       Login <br /> My Account
                     </p>
@@ -86,7 +87,7 @@ const Header = () => {
                     to="/cart"
                     className="d-flex align-item-center gap-10 text-white custom-cart"
                   >
-                    <img src="./images/cart.svg" alt="cart_svg" />
+                    <span class="material-symbols-outlined">shopping_cart</span>
                     <div className="d-flex flex-column">
                       <span className="badge bg-white text-dark">0</span>
                       <p className="custom-cart">$500</p>
