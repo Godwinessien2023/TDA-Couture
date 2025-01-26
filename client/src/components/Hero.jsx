@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -38,8 +39,12 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
+          <Link to="/login">
           <button className="hero-btn primary">Shop Now</button>
+          </Link>
+          <Link to="/">
           <button className="hero-btn secondary">Explore Collection</button>
+          </Link>
         </motion.div>
       </div>
 

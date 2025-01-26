@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { getProductApi } from "../api"; // Make sure this path matches your actual file structure
 
 const ProductSearch = () => {
-  const [products, setProducts] = useState([]); // All fetched products
-  const [searchResults, setSearchResults] = useState([]); // Filtered products based on search
-  const [searchTerm, setSearchTerm] = useState(""); // Search input
-  const [error, setError] = useState(""); // Error handling
-
-  const API_URL = "https://8kywcs-5000.csb.app/api/v1/product/getallproducts";
+  const [products, setProducts] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [error, setError] = useState("");
 
   // Fetch all products on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(API_URL);
-        setProducts(response.data); // Save all products
-        setSearchResults(response.data); // Initially show all products
+        const productData = await getProductApi(); // Using getProductApi instead of axios
+        setProducts(productData);
+        setSearchResults(productData);
       } catch (err) {
         console.error("Error fetching products:", err);
         setError("Failed to fetch products. Please try again later.");
@@ -24,6 +22,16 @@ const ProductSearch = () => {
 
     fetchProducts();
   }, []);
+
+  // Function to format price in Naira
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(price);
+  };
 
   // Handle search input change
   const handleSearchChange = (e) => {
@@ -73,7 +81,7 @@ const ProductSearch = () => {
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.description}</p>
                     <p className="card-text">
-                      <strong>Price:</strong> ${product.price}
+                      <strong>Price:</strong> {formatPrice(product.price)}
                     </p>
                     <p className="card-text">
                       <strong>Quantity:</strong> {product.quantity}

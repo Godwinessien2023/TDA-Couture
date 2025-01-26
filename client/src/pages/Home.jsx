@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
 import HeroSection from "../components/Hero";
@@ -13,85 +12,7 @@ const Home = () => {
       <section className="home-wrapper-1 py-5">
         <div className="container-xxl">
           <div className="row">
-            <div className="col-6">
-              {/*<div className="main-banner position-relative">
-                <img
-                  src="./images/main-banner-1.jpg"
-                  className="img-fluid rounded-3"
-                  alt="main-banner"
-                />
-                <div className="main-banner-content position-absolute">
-                  <h4>SUPPERCHARGED FOR PROS</h4>
-                  <h5>iPad $13+ Pro</h5>
-                  <p>From $999,00 or $41.62/mo.</p>
-                  <Link className="button">BUY NOW</Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-6">
-              <div className="d-flex flex-wrap gap-10 justify-content-between align-items-center">
-                <div className="small-banner position-relative py-1">
-                  <img
-                    src="./images/catbanner-01.jpg"
-                    className="img-fluid rounded-3"
-                    alt="catbanner"
-                  />
-                  <div className="small-banner-content position-absolute">
-                    <h4>NEW ARRIVAL</h4>
-                    <h5>BUY iPAD HERE</h5>
-                    <p>
-                      From $999,00 <br /> or $41.62/mo.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="small-banner position-relative">
-                  <img
-                    src="./images/catbanner-02.jpg"
-                    className="img-fluid rounded-3"
-                    alt="catbanner"
-                  />
-                  <div className="small-banner-content position-absolute">
-                    <h4>BEST SAKE</h4>
-                    <h5>iPad $13+ Pro</h5>
-                    <p>
-                      From $999,00 <br /> or $41.62/mo.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="small-banner position-relative">
-                  <img
-                    src="./images/catbanner-03.jpg"
-                    className="img-fluid rounded-3"
-                    alt="catbanner"
-                  />
-                  <div className="small-banner-content position-absolute">
-                    <h4>BEST SAKE</h4>
-                    <h5>iPad $13+ Pro</h5>
-                    <p>
-                      From $999,00 <br /> or $41.62/mo.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="small-banner position-relative ">
-                  <img
-                    src="./images/catbanner-04.jpg"
-                    className="img-fluid rounded-3"
-                    alt="catbanner"
-                  />
-                  <div className="small-banner-content position-absolute">
-                    <h4>BEST SAKE</h4>
-                    <h5>iPad $13+ Pro</h5>
-                    <p>
-                      From $999,00 <br /> or $41.62/mo.
-                    </p>
-                  </div>
-                </div>
-  </div>**/}
-            </div>
+            <div className="col-6"></div>
           </div>
         </div>
       </section>
@@ -149,7 +70,7 @@ const Home = () => {
               <div className="categories d-flex align-items-center flex-wrap justify-content-between">
                 <div className="d-flex gap-10 align-items-center">
                   <div>
-                    <h6>Shoe</h6>
+                    <h6>Brown Leather Shoe</h6>
                     <p>Available</p>
                   </div>
                   <img
@@ -198,6 +119,57 @@ const Home = () => {
                     width={110}
                   />
                 </div>
+                <div className="d-flex gap-10 align-items-center">
+                  <div>
+                    <h6>Beautiful Kaftan</h6>
+                    <p>Available</p>
+                  </div>
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737843192/71_mh6xaa.png"
+                    alt="shoe"
+                    height={110}
+                    width={110}
+                  />
+                </div>
+
+                <div className="d-flex gap-10 align-items-center">
+                  <div>
+                    <h6>White Sneakers</h6>
+                    <p>Available</p>
+                  </div>
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737841103/cld-sample-5.jpg"
+                    alt="Camera"
+                    height={110}
+                    width={110}
+                  />
+                </div>
+
+                <div className="d-flex gap-10 align-items-center">
+                  <div>
+                    <h6>Baggy cap</h6>
+                    <p>Available</p>
+                  </div>
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737846794/1691581087656_mq6qeo.jpg"
+                    alt="Camera"
+                    height={110}
+                    width={110}
+                  />
+                </div>
+
+                <div className="d-flex gap-10 align-items-center">
+                  <div>
+                    <h6>Correct Agbada</h6>
+                    <p>Available</p>
+                  </div>
+                  <img
+                    src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737844093/1691581088597_whbfep.jpg"
+                    alt="Asad Arabian perfume"
+                    height={110}
+                    width={110}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -215,20 +187,30 @@ const Home = () => {
         </div>
       </section>
 
-      {/**<section className="famous-wrapper-2 py-5 home-wrapper-2">
+      <section className="famous-wrapper-2 py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src="images/famous-01.jpg"
+                  src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737844956/1691581087305_mcfncc.jpg"
                   className="img-fluid"
                   alt="famous"
                 />
                 <div className="famous-content position-absolute">
-                  <h6>Big Screen</h6>
-                  <h4>Smart Watch Series 7</h4>
-                  <p>From $999 or $16.62/mo. for 24 mo.</p>
+                  <h4 className="text-dark">Classic Black Shoe</h4>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-3">
+              <div className="famous-card position-relative">
+                <img 
+                src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845025/1691581087278_rvjwil.jpg" 
+                className="img-fluid" alt="famous" />
+                <div className="famous-content position-absolute ">
+                  <h6 className="text-dark">Bag</h6>
+                  <h4 className="text-dark">Business bag for you</h4>
                 </div>
               </div>
             </div>
@@ -236,14 +218,13 @@ const Home = () => {
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src="images/famous-02.jpg"
+                  src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845029/1691581088062_uo9kgp.jpg"
                   className="img-fluid"
                   alt="famous"
                 />
                 <div className="famous-content position-absolute ">
-                  <h6 className="text-dark">Studio Display</h6>
-                  <h4 className="text-dark">600 nits of brightness</h4>
-                  <p className="text-dark">27-inch 5k retina display</p>
+                  <h6 className="text-dark">BROWN SHOE</h6>
+                  <h4 className="text-dark">Stylish Everyday wear.</h4>
                 </div>
               </div>
             </div>
@@ -251,37 +232,19 @@ const Home = () => {
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src="images/famous-03.jpg"
+                  src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737844959/1691581088308_avjfxb.jpg"
                   className="img-fluid"
                   alt="famous"
                 />
                 <div className="famous-content position-absolute ">
-                  <h6 className="text-dark">SMARTPHONES</h6>
-                  <h4 className="text-dark">Smartphone 13 Pro.</h4>
-                  <p className="text-dark">
-                    Now in Green From $999.00 or $4162/mo fot 24 mo. footnote
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-3">
-              <div className="famous-card position-relative">
-                <img
-                  src="images/famous-04.jpg"
-                  className="img-fluid"
-                  alt="famous"
-                />
-                <div className="famous-content position-absolute ">
-                  <h6 className="text-dark">Homespeakers</h6>
-                  <h4 className="text-dark">Room-filling sound</h4>
-                  <p className="text-dark">From $699 or $116.58/mo for 12 mo</p>
+                  <h6 className="text-dark">Slide</h6>
+                  <h4 className="text-dark">Slide In Comfort</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-</section>**/}
+      </section>
 
       <section className="special-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
@@ -367,7 +330,7 @@ const Home = () => {
                   </div>
                   <div className="mx-4 w-25">
                     <img
-                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737843192/71_mh6xaa.png"
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737841103/cld-sample-5.jpg"
                       alt="Brand"
                       height={110}
                       width={110}
@@ -375,7 +338,7 @@ const Home = () => {
                   </div>
                   <div className="mx-4 w-25">
                     <img
-                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737843192/71_mh6xaa.png"
+                      src="https://res.cloudinary.com/duaygvjlr/image/upload/v1737845017/1691581087478_lsphgt.jpg"
                       alt="Brand"
                       height={110}
                       width={110}

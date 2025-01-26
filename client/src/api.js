@@ -38,7 +38,6 @@ export const loginApi = async (data) => {
   }
 };
 
-// Function to handle signup
 export const signupApi = async (data) => {
   try {
     const response = await api.post("/user/register", JSON.stringify(data));
@@ -59,6 +58,15 @@ export const addProductApi = async (data) => {
   }
 };
 
+export const deleteProductApi = async (data) => {
+  try {
+    const response = await api.delete("/product/", JSON.stringify(data));
+    return response.data;
+  } catch (error) {
+    console.error("Signup API error:", error.response?.data || error.message);
+    throw error.response?.data || error.message;
+  }
+};
 export const getProductApi = async (data) => {
   try {
     const response = await api.get(
