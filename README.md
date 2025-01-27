@@ -128,8 +128,6 @@ cd TDA-Couture
 
 Various framework and Technology are used in this project from the frontend and Backend
 
-## Technologies
-
 ### Frontend
 - React.js
 - Redux
