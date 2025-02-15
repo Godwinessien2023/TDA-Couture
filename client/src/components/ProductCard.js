@@ -32,12 +32,22 @@ const ProductCard = (props) => {
     return <p>Loading products...</p>;
   }
 
+  // Function to format price in Naira
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(price);
+  };
+
   return (
     <>
       {products.map((product) => (
         <div
           key={product.id}
-          className={` ${
+          className={`${
             location.pathname === "/store" ? `gr-${grid}` : "col-3"
           }`}
         >
@@ -69,7 +79,7 @@ const ProductCard = (props) => {
               >
                 {product.description}
               </p>
-              <p className="price">${product.price}</p>
+              <p className="price">{formatPrice(product.price)}</p>
             </div>
             <div className="action-bar position-absolute">
               <div className="d-flex flex-column gap-15">
